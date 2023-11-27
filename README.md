@@ -38,3 +38,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 Notes:
 
 - [Absolute Imports](https://nextjs.org/docs/app/building-your-application/configuring/absolute-imports-and-module-aliases)
+
+NPM Packages
+
+- [@auth0/nextjs-auth0](https://www.npmjs.com/package/@auth0/nextjs-auth0)
