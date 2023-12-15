@@ -27,7 +27,7 @@ export default function ButtonAppBar() {
           </Typography>
           {/* LOGIN */}
           {!user && (
-            <Button color="inherit" href="/api/auth/login">
+            <Button color="inherit" href="/api/auth/login?returnTo=/chat">
               Login
               {/* DO NOT USE NEXTJS LINKS FOR AUTH0 API */}
               {/* <a href="/api/auth/login">Login</a> */}

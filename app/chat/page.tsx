@@ -1,7 +1,7 @@
 export default function First() {
   return (
       <div>
-          <h1>First Blog Post</h1>
+          <h1>This is the Chat page !</h1>
       </div>
   );
 }
