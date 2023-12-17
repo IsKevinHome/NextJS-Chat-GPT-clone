@@ -11,7 +11,6 @@ export default function RootLayout({ children }) {
       <body>
         <UserProvider>
           <main>
-            {/* <Navbar /> */}
             {children}
           </main>
         </UserProvider>

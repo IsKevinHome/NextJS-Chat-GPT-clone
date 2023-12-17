@@ -45,8 +45,6 @@ export default function Index() {
             </Button>
           )}
         </Container>
-
-        {/* {user && <h1>Hello welcome</h1>} */}
       </UserProvider>
     </>
   );
