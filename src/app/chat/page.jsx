@@ -1,15 +1,12 @@
-"use client";
-
-import React from "react";
-import { useUser } from "@auth0/nextjs-auth0/client";
-import LeftSection from "../components/LeftSection";
-import RightSection from "../components/RightSection";
+'use client';
 
 export default function Home() {
-  const { user, isLoading } = useUser();
-
-  return <>
-  <LeftSection />
-  <RightSection />
-  </>;
+  return (
+    <>
+      <div class='grid grid-cols-[260px_auto] h-screen'>
+        <div className="bg-neutral-900">side bar</div>
+        <div className='bg-neutral-500'>chat window</div>
+      </div>
+    </>
+  );
 }
