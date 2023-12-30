@@ -5,9 +5,22 @@ import { useState } from 'react';
 
 export default function ChatPage() {
   const [messageText, setMessageText] = useState('');
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     console.log('messageText', messageText);
+
+    const response = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messageText }),
+    });
+
+    console.log(response);
+
+    const data = response.body;
+
+    if (!data) return;
   };
 
   return (
