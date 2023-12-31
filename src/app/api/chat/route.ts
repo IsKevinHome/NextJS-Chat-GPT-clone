@@ -7,31 +7,27 @@ export async function GET(request: Request) {
 export async function POST(req: Request) {
   const body = await req.json();
 
-  console.log('req body', body);
+  // console.log('req body', body);
 
   const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
   });
 
-  const stream = await openai.chat.completions.create({
+  const chatCompletion = await openai.chat.completions.create({
     messages: [
-      { role: 'system', content: 'you are a no nonsense expert' },
+      {
+        role: 'system',
+        content: 'you speak like a dumb version of donald trump',
+      },
       { role: 'user', content: body.messageText },
     ],
     model: 'gpt-3.5-turbo',
-    stream: true,
   });
 
-  let accumulatedContent = '';
-
-  for await (const chunk of stream) {
-    // process.stdout.write(chunk.choices[0]?.delta?.content || '');
-    const content = chunk.choices[0]?.delta?.content || '';
-    console.log(content); // Log the content of each chunk
-    process.stdout.write(content);
-    accumulatedContent += content;
-  }
-
-  console.log(accumulatedContent)
-  return new Response(JSON.stringify({ hello: 'world' }));
+  console.log('API - chatCompletion', chatCompletion.choices[0].message); // debug  
+  return new Response(JSON.stringify(chatCompletion.choices[0].message), {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 }
